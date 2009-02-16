@@ -5,7 +5,7 @@ require 'oauth/client/net_http'
 module OAuth
   class Consumer
     
-    @@default_options={
+    @@default_options = {
       # Signature method used by server. Defaults to HMAC-SHA1
       :signature_method   => 'HMAC-SHA1',
       
@@ -61,6 +61,7 @@ module OAuth
         options[key.to_sym] = value
         options
       end)
+
       @key = consumer_key
       @secret = consumer_secret
     end
@@ -102,8 +103,8 @@ module OAuth
     #   @consumer.request(:post, '/people', @token, {}, @person.to_xml, { 'Content-Type' => 'application/xml' })
     #
     def request(http_method, path, token = nil, request_options = {}, *arguments)
-      if path=~/^\//
-        _http=http
+      if path =~ /^\//
+        _http = http
       else
         _http = create_http(path)
         _uri = URI.parse(path)
