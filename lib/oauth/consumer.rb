@@ -190,7 +190,7 @@ module OAuth
 
     protected
     
-    #Instantiates the http object
+    # Instantiates the http object
     def create_http(_url = nil)
       if _url.nil? || _url[0]=~/^\//
         our_uri = URI.parse(site)
